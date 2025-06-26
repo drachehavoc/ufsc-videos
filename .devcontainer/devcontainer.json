@@ -1,0 +1,23 @@
+{
+    // Nome do nosso ambiente de desenvolvimento
+    "name": "Conversador de Vídeos",
+
+    // Arquivo que descreve como o container deve ser montado
+    "dockerComposeFile": "../compose.yml",
+
+    // Nome do serviço principal dentro do podman-compose.yml
+    "service": "app",
+
+    // Pasta onde nosso projeto vai ficar dentro do container
+    "workspaceFolder": "/workspace",
+
+    // Extensões úteis do VS Code para instalar no container
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "ms-python.python",
+                "oven.bun-vscode"
+            ]
+        }
+    }
+}
