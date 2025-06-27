@@ -1,4 +1,4 @@
 .env
 data/
-**/llm-models
 .venv*
+**/llm-models
