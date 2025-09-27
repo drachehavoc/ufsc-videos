@@ -6,6 +6,10 @@ Anteriormente chamado de Cérebro UFLisC, é um sistema de busca, pesquisa e ref
 
 ### Se não funcionar o CUDA
 
+sudo setenforce 0
+
+### 
+
 dentro do venv execute:
 
 ```bash

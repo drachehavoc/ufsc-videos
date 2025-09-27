@@ -21,7 +21,22 @@ def main():
         log("error", {"code": 1, "msg": "Parâmetro video_id obrigatório"})
         sys.exit(1)
     video_id_input = sys.argv[1]
-    ydl_opts_info = {'quiet': True, 'no_warnings': True, 'skip_download': True}
+    # ydl_opts_info = {'quiet': True, 'no_warnings': True, 'skip_download': True}
+
+    ydl_opts_info = {
+        'quiet': True, 
+        'no_warnings': True, 
+        'skip_download': True,
+        'http_headers': {
+            'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.124 Safari/537.36',
+            'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+            'Accept-Language': 'en-us,en;q=0.5',
+            'Accept-Encoding': 'gzip,deflate',
+            'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.7',
+            'Connection': 'keep-alive',
+        }
+    }
+
     info = None
     try:
         with yt_dlp.YoutubeDL(ydl_opts_info) as ydl:
@@ -68,6 +83,7 @@ def main():
         'quiet': True,
         'no_warnings': True,
         'noprogress': True,
+        'http_headers': ydl_opts_info['http_headers'],
     }
     try:
         with yt_dlp.YoutubeDL(ydl_opts_download) as ydl:
